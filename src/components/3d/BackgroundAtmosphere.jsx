@@ -26,7 +26,7 @@ export const BackgroundAtmosphere = ({ activeSection = 0, scrollProgress = 0 }) 
     const origY = new Float32Array(count);
 
     const cRed = new THREE.Color('#E4002B');
-    const cRedLight = new THREE.Color('#FF2A4D');
+    const cRedLight = new THREE.Color('#E4002B');
     const cWhite = new THREE.Color('#FFFFFF');
     const cSoftWhite = new THREE.Color('#D4D4D8');
 
@@ -135,7 +135,7 @@ export const BackgroundAtmosphere = ({ activeSection = 0, scrollProgress = 0 }) 
     <group>
       {/* Clean Dynamic KFC Red & White Ambient Lights */}
       <pointLight ref={lightRef1} position={[0, 2, -2]} intensity={3.5} color="#E4002B" distance={16} />
-      <pointLight ref={lightRef2} position={[0, -2, -3]} intensity={2.2} color="#FF2A4D" distance={15} />
+      <pointLight ref={lightRef2} position={[0, -2, -3]} intensity={2.2} color="#E4002B" distance={15} />
       <pointLight position={[5, 4, -4]} intensity={1.8} color="#FFFFFF" distance={16} />
       <pointLight position={[-5, -4, -4]} intensity={2.0} color="#E4002B" distance={16} />
 

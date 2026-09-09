@@ -16,7 +16,10 @@ import {
   Clock,
   UserCheck,
   Activity,
-  CheckCircle
+  CheckCircle,
+  BookOpen,
+  TrendingUp,
+  ArrowRight
 } from 'lucide-react';
 import { MetricCounter } from '../ui/MetricCounter';
 import { sounds } from '../audio/SoundManager';
@@ -29,7 +32,7 @@ export const SectionOverlay = ({ section, index, isActive = false }) => {
       particleCount: 120,
       spread: 80,
       origin: { y: 0.6 },
-      colors: ['#E4002B', '#FFFFFF', '#FF2A4D']
+      colors: ['#E4002B', '#FFFFFF', '#E4002B']
     });
   };
 
@@ -446,8 +449,101 @@ export const SectionOverlay = ({ section, index, isActive = false }) => {
           </div>
         )}
 
-        {/* Section 12: CIERRE FINAL */}
+        {/* Section 12: CULTURA & PLAN DE CARRERA */}
         {index === 11 && (
+          <div className="max-w-6xl mx-auto w-full space-y-6">
+            {/* Header: Badge, Title & Subtitle OUTSIDE the panels with shadows and white text */}
+            <div className="space-y-3">
+              <div className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/60 text-xs sm:text-sm font-bold text-white border border-white/20 backdrop-blur-md shadow-md text-contrast-subtle ${badgeClass}`}>
+                <GraduationCap className="w-4 h-4 text-kfc-red" />
+                <span>{section.category}</span>
+              </div>
+
+              <div className="space-y-1.5">
+                <h2 className={`text-3xl sm:text-5xl font-black text-white uppercase font-heading leading-tight text-contrast-title drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] ${titleClass}`}>
+                  {section.title}
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl font-medium text-white/95 text-contrast-body drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                  {section.subtitle}
+                </p>
+              </div>
+            </div>
+
+            {/* Content Grid: 2 Symmetrical Panels */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+              {/* Left Panel: Formación y Desarrollo Interno */}
+              <div className={`lg:col-span-6 p-6 sm:p-7 rounded-3xl bg-black/90 border border-white/20 backdrop-blur-2xl shadow-2xl flex flex-col justify-between space-y-5 ${getCardClass(0)}`}>
+                {/* Header matching the right panel */}
+                <div className="flex items-center gap-3 border-b border-white/15 pb-4">
+                  <BookOpen className="w-6 h-6 text-kfc-red flex-shrink-0" />
+                  <h3 className="text-lg sm:text-xl font-black uppercase tracking-wider text-white text-contrast-title">
+                    Formación y Desarrollo Interno
+                  </h3>
+                </div>
+
+                {/* 3 Numbered Points with WHITE number badges */}
+                <div className="space-y-3.5 my-auto">
+                  {section.highlightPoints?.map((text, i) => (
+                    <div
+                      key={i}
+                      className="p-3.5 sm:p-4 rounded-2xl bg-white/[0.05] border border-white/10 flex items-start gap-3.5"
+                    >
+                      {/* White Number Badge */}
+                      <div className="w-7 h-7 rounded-full bg-white text-black font-black flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(255,255,255,0.4)]">
+                        <span className="text-xs font-black">{i + 1}</span>
+                      </div>
+                      <p className="text-sm sm:text-base text-gray-200 leading-relaxed font-normal text-contrast-body">
+                        {text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Panel: Plan de Carrera Interno (Clean, sin subtítulo, sin badge ascensos, sin nota inferior) */}
+              <div className={`lg:col-span-6 p-6 sm:p-7 rounded-3xl bg-black/90 border border-white/20 backdrop-blur-2xl shadow-2xl flex flex-col justify-between space-y-5 ${getCardClass(1)}`}>
+                {/* Header matching the left panel */}
+                <div className="flex items-center gap-3 border-b border-white/15 pb-4">
+                  <Award className="w-6 h-6 text-kfc-red flex-shrink-0" />
+                  <h3 className="text-lg sm:text-xl font-black uppercase tracking-wider text-white text-contrast-title">
+                    Plan de Carrera Interno
+                  </h3>
+                </div>
+
+                {/* 3 Clean Horizontal Progression Rows */}
+                <div className="space-y-3.5 my-auto">
+                  {section.careerSteps?.map((step, idx) => (
+                    <div
+                      key={idx}
+                      className="p-3.5 sm:p-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-kfc-red/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 group"
+                    >
+                      {/* Current Position */}
+                      <div className="flex-1 px-3.5 py-2.5 rounded-xl bg-black/60 text-xs sm:text-sm font-bold text-gray-200 border border-white/10 text-center sm:text-left">
+                        {step.from}
+                      </div>
+
+                      {/* Arrow Divider */}
+                      <div className="flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-kfc-red/15 border border-kfc-red/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <ArrowRight className="w-4 h-4 text-kfc-red" />
+                        </div>
+                      </div>
+
+                      {/* Promoted Position */}
+                      <div className="flex-1 px-3.5 py-2.5 rounded-xl bg-[#E4002B] text-xs sm:text-sm font-black text-white shadow-[0_0_15px_rgba(228,0,43,0.35)] text-center sm:text-left flex items-center justify-center sm:justify-start gap-1.5">
+                        <Award className="w-3.5 h-3.5 text-white/90 flex-shrink-0" />
+                        <span>{step.to}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Section 13: CIERRE FINAL */}
+        {index === 12 && (
           <div className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center space-y-8 py-10">
             <div className={`flex items-center justify-center gap-3 ${badgeClass}`}>
               <span className="text-sm sm:text-base font-bold uppercase tracking-[0.25em] text-white bg-kfc-red/90 px-6 py-2 rounded-full border border-kfc-red shadow-2xl text-contrast-subtle">

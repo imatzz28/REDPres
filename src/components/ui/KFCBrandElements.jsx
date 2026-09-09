@@ -33,8 +33,8 @@ export const REDLogo = ({ className = "h-9 w-auto", glowing = false }) => {
       <svg className={className} viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FF2A4D" />
-            <stop offset="100%" stopColor="#B30022" />
+            <stop offset="0%" stopColor="#E4002B" />
+            <stop offset="100%" stopColor="#E4002B" />
           </linearGradient>
           <filter id="redGlow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="3" result="blur" />

@@ -2,8 +2,8 @@
 
 @theme {
   --color-kfc-red: #E4002B;
-  --color-kfc-redDark: #B30022;
-  --color-kfc-redLight: #FF2A4D;
+  --color-kfc-redDark: #E4002B;
+  --color-kfc-redLight: #E4002B;
   --color-kfc-black: #1A1A1A;
   --color-kfc-charcoal: #111111;
   --color-kfc-cream: #F5F1E8;
@@ -38,7 +38,7 @@ h1, h2, h3, .font-heading {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff2a4d;
+  background: #E4002B;
 }
 
 /* Glassmorphism helpers */

@@ -29,7 +29,9 @@ const SECTION_TRANSFORMS = [
   { pos: [2.5, 1.4, -0.6], scale: 0.55, rot: [0, -0.2, 0], showRings: false },
   // 10: Inteligencia BI (Upper right companion)
   { pos: [2.5, 1.4, -0.6], scale: 0.55, rot: [0, -0.2, 0], showRings: false },
-  // 11: Gran Cierre / Impacto (Triumphant Upper Crown)
+  // 11: Cultura & Plan de Carrera (Upper right companion)
+  { pos: [2.5, 1.4, -0.6], scale: 0.55, rot: [0.06, -0.25, 0], showRings: false },
+  // 12: Gran Cierre / Impacto (Triumphant Upper Crown)
   { pos: [0, 1.45, -0.4], scale: 0.78, rot: [-0.06, 0, 0], showRings: true }
 ];
 
@@ -191,7 +193,7 @@ export const Logo3D = ({ activeSection = 0, scrollProgress = 0 }) => {
             <mesh rotation={[-Math.PI / 3.8, Math.PI / 3, 0]}>
               <torusGeometry args={[2.8, 0.02, 16, 64]} />
               <meshStandardMaterial
-                color="#FF2A4D"
+                color="#E4002B"
                 emissive="#E4002B"
                 emissiveIntensity={1.3}
                 metalness={0.8}
@@ -212,7 +214,7 @@ export const Logo3D = ({ activeSection = 0, scrollProgress = 0 }) => {
               >
                 <octahedronGeometry args={[0.6, 0]} />
                 <meshStandardMaterial
-                  color={idx % 2 === 0 ? '#FF2A4D' : '#FFFFFF'}
+                  color={idx % 2 === 0 ? '#E4002B' : '#FFFFFF'}
                   emissive={idx % 2 === 0 ? '#E4002B' : '#FFFFFF'}
                   emissiveIntensity={1.0}
                   roughness={0.2}

@@ -247,8 +247,33 @@ export const SECTIONS = [
     mockupType: 'bi_charts'
   },
   {
-    id: 'impacto',
+    id: 'cultura-desarrollo',
     number: '12',
+    category: 'CULTURA & DESARROLLO',
+    title: 'R.E.D. — MÁS QUE UNA PLATAFORMA',
+    subtitle: 'Una nueva forma de gestionar y desarrollar al Departamento',
+    description: 'R.E.D. no es solo otra plataforma: es una nueva forma de gestionar y desarrollar al equipo de entrenamiento.',
+    highlightPoints: [
+      'Complementado con un plan de desarrollo y formación interna para todo el equipo.',
+      'Cursos y actividades para desarrollar sus habilidades y permitir que el entrenamiento esté en mejora continua.',
+      'Plan de carrera interno, donde los formadores que destaquen continuarán creciendo en la compañía.'
+    ],
+    careerSteps: [
+      { from: 'Especialista', to: 'Líder de Turno' },
+      { from: 'Coordinador de Entrenamiento', to: 'Subgerente' },
+      { from: 'Líder de Entrenamiento', to: 'Jefe de Área' }
+    ],
+    theme: 'career_growth',
+    accentColor: '#E4002B',
+    bgColor: '#111111',
+    textColor: 'light',
+    cameraPosition: [0, 0.2, 4.4],
+    sceneType: 'career_pathway',
+    badge: 'PLAN DE DESARROLLO & FORMACIÓN'
+  },
+  {
+    id: 'impacto',
+    number: '13',
     category: 'RESULTADOS',
     title: 'EL IMPACTO EN NÚMEROS',
     subtitle: 'El futuro del entrenamiento KFC ya está aquí',

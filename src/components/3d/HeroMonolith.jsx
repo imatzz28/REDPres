@@ -75,7 +75,7 @@ export const HeroMonolith = ({ progress = 0 }) => {
           <mesh rotation={[-Math.PI / 4, Math.PI / 4, 0]}>
             <torusGeometry args={[2.7, 0.025, 16, 64]} />
             <meshStandardMaterial
-              color="#FF2A4D"
+              color="#E4002B"
               emissive="#E4002B"
               emissiveIntensity={0.8}
               metalness={0.8}

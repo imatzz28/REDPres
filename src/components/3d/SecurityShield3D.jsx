@@ -51,7 +51,7 @@ export const SecurityShield3D = () => {
           <group ref={lockCoreRef} position={[0, 0.2, 0.9]}>
             <mesh>
               <cylinderGeometry args={[0.4, 0.4, 0.15, 6]} rotation={[Math.PI / 2, 0, 0]} />
-              <meshStandardMaterial color="#E4002B" emissive="#FF2A4D" emissiveIntensity={0.9} />
+              <meshStandardMaterial color="#E4002B" emissive="#E4002B" emissiveIntensity={0.9} />
             </mesh>
             {/* Keyhole / Secure Core */}
             <mesh position={[0, 0, 0.1]}>
